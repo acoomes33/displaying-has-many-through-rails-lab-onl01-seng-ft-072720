@@ -1,0 +1,11 @@
+lists the date and time for each of their 
+appointments and links to the 
+corresponding doctor's show page.
+
+<h4><%= @patient.name %></h4>
+<ul>
+<% @patient.appointments.each do |a| %>
+<li><%= a.date_and_time %></li>
+<li><%= link_to a.doctor.name, doctor_path(a.doctor) %></li>
+<% end %>
+</ul>
